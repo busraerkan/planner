@@ -15,11 +15,11 @@ public class PlannerServiceImpl implements PlannerService {
 
     @Override
     public List<Item> getAllItems() {
-        return null;
+        return plannerRepository.findAll();
     }
 
     @Override
     public List<Item> getItemsByStatus(Status status) {
-        return null;
+        return plannerRepository.findAllByStatus(status).orElse(null);
     }
 }
